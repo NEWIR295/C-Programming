@@ -1,0 +1,114 @@
+/*
+ * main.c
+ *
+ *  Created on: Aug 5, 2024
+ *      Author: Mohamed Newir
+ */
+/*std libraries*/
+#include <stdio.h>
+#include <stdlib.h>
+/*structure deceleration*/
+struct node{
+	int data;
+	struct node *next;
+};
+/*global variables*/
+struct node *head = NULL;
+/*function prototype*/
+void insertAtLast(int);
+void printList(void);
+void insertNew(int ,int);
+/*main function*/
+int main(int argc, char **argv){
+	insertAtLast(11);
+	insertAtLast(3);
+	insertAtLast(10);
+	insertAtLast(50);
+	insertAtLast(23);
+	insertAtLast(5);
+	insertAtLast(50);
+	printList();
+	insertNew(15,3);
+	printList();
+	insertNew(50,10);
+	printList();
+	insertNew(50,0);
+	printList();
+	insertNew(8,8);
+    printList();
+	return 0;
+}
+/*
+	a C function that insert linked list node at any
+	position. The function takes the data of the node and the
+	node position as inputs. For example if we have a linked list
+	contains the following data nodes: 11 3 10 50 23 5 60
+	If you asked the function to insert a new node has data equals to
+	15 at position 3 the linked list should be: 11 3 10 15 50 23 5 60
+ */
+void insertNew(int data,int pos){
+	int count = 0;
+	struct node *current = NULL;
+	struct node *prev = NULL;
+	struct node *link = (struct node *)malloc(sizeof(struct node));
+	if(head == NULL){
+		link->data = data;
+		link->next = NULL;
+		head = link;
+		return;
+	}
+	if(pos == 0){
+		link->data = data;
+		link->next = head;
+		head = link;
+		printf("%d inserted @ position %d\n",data,count);
+		return;
+	}
+	current = head;
+	while(current != NULL){
+		if(count > pos){
+			break;
+		}
+		if(count == pos){
+			link->data = data;
+			link->next = current;
+			prev->next = link;
+			printf("%d inserted @ position %d\n",data,count);
+			return;
+		}
+		count++;
+		prev = current;
+		current = current->next;
+	}
+	free(link);
+	printf("%d is out of list range\n",pos);
+}
+void insertAtLast(int data){
+	struct node *link =(struct node*)malloc(sizeof(struct node));
+	struct node *current = NULL;
+	link->data = data;
+	link->next = NULL;
+
+	if(head == NULL){
+		head = link;
+		return;
+	}
+	current = head;
+	while(current->next != NULL){
+		current = current->next;
+	}
+	current->next = link;
+}
+void printList(void){
+	struct node *current = NULL;
+	if(head == NULL){
+		printf("list is empty\n");
+		return;
+	}
+	current = head;
+	while(current != NULL){
+		printf("%d =>\t",current->data);
+		current = current->next;
+	}
+	printf("\n");
+}

@@ -1,0 +1,35 @@
+/*
+ * main.c
+ *
+ *  Created on: Aug 3, 2024
+ *      Author: ma479
+ */
+/*std libraries*/
+#include <stdio.h>
+#include <stdlib.h>
+/*structure deceleration*/
+struct node{
+	int data;
+	struct node *next;
+};
+/*global variables*/
+struct node *head = NULL;
+/*function prototype*/
+void insertAtfirst(int);
+/*MAIN FUNCTION*/
+int main(int argc,char **argv){
+	return 0;
+}
+/**/
+void insertAtfirst(int data){
+	struct node *link =(struct node*)malloc(sizeof(struct node));
+	link->data = data;
+	link->next = NULL;
+	head = link;
+}
+void findData(int data){
+	struct node *current;
+	current = head;
+
+
+}

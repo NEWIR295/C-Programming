@@ -1,0 +1,4 @@
+21:39:55 **** Incremental Build of configuration Debug for project C-Project ****
+Info: Internal Builder is used for build
+gcc -o C-Project.exe "src\\func.o" "src\\main.o" 
+Info: Nothing to build for C-Project

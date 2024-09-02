@@ -1,0 +1,19 @@
+/*
+ * main.c
+ *
+ *  Created on: Aug 1, 2024
+ *      Author: Mohamed Newir
+ */
+/*std libraries*/
+#include <stdio.h>
+#include <stdlib.h>
+/*structure deceleration*/
+
+/*main function*/
+/*
+
+*/
+int main (int argc,char **argv){
+
+	return 0;
+}

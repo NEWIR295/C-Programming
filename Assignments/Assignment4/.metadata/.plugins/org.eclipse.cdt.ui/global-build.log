@@ -1,0 +1,32 @@
+03:26:39 **** Incremental Build of configuration Debug for project A12 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -o A12.exe "src\\main.o" 
+Info: Nothing to build for A12
+03:28:29 **** Incremental Build of configuration Debug for project A12 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -o A12.exe "src\\main.o" 
+Info: Nothing to build for A12
+03:29:57 **** Incremental Build of configuration Debug for project A12 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -o A12.exe "src\\main.o" 
+Info: Nothing to build for A12
+Info: Nothing to build for A12
+Info: Nothing to build for A12
+Info: Nothing to build for A12
+03:35:48 **** Incremental Build of configuration Debug for project A12 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -o A12.exe "src\\main.o" 
+03:36:56 **** Incremental Build of configuration Debug for project A12 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -o A12.exe "src\\main.o" 
+Info: Nothing to build for A12
+03:39:10 **** Incremental Build of configuration Debug for project A12 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -o A12.exe "src\\main.o" 
+Info: Nothing to build for A12

@@ -1,0 +1,67 @@
+/*
+ * main.c
+ *
+ *  Created on: Aug 3, 2024
+ *      Author: ma479
+ */
+/*std libraries*/
+#include <stdio.h>
+#include <stdlib.h>
+/*structure deceleration*/
+struct node{
+	int data;
+	struct node *next;
+};
+/*global variables*/
+struct node *head = NULL;
+/*function prototype*/
+void insertAtfirst(int);
+int findData(int data);
+/*MAIN FUNCTION*/
+int main(int argc,char **argv){
+	int size,i,data,pos;
+	printf("enter data size: ");
+	fflush(stdout);
+	scanf("%d",&size);
+	for(i = 0;i<size;i++){
+		printf("enter data to save");
+		fflush(stdout);
+		scanf("%d",&data);
+		insertAtfirst(data);
+	}
+	printf("enter data to find: ");
+	fflush(stdout);
+	scanf("%d",&data);
+	pos = findData(data);
+	if(pos == -1){
+		printf("data not found in the list\n");
+	}
+	else{
+		printf("data is at postion = %d",pos);
+	}
+	return 0;
+}
+/**/
+void insertAtfirst(int data){
+	struct node *link =(struct node*)malloc(sizeof(struct node));
+	link->data = data;
+	link->next = NULL;
+	head = link;
+}
+int findData(int data){
+	int pos =0;
+	struct node *current;
+	current = head;
+	if(head == NULL){
+		printf("linked list is empty\n");
+		return -1;
+	}
+	while(current != NULL){
+		if(current ->data == data){
+			return pos;
+		}
+		current = current->next;
+		pos++;
+	}
+	return -1;
+}

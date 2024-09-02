@@ -1,0 +1,39 @@
+/*
+ * main.c
+ *
+ *  Created on: Jul 11, 2024
+ *      Author: Mohamed Newir
+ *      a program to make a simple calculator using switch-case. The calculator takes the operation (+ or – or * or /) and
+ *      takes the two input arguments and print the results
+ */
+
+
+//std libraries
+#include <stdio.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv){
+
+	char op;
+	float num1,num2,result;
+	printf("Enter the operation: ");
+	fflush(stdout);
+	scanf("%d",&op);
+	printf("Enter first arg: ");
+	fflush(stdout);
+	scanf("%f",&num1);
+	printf("Enter second arg: ");
+	fflush(stdout);
+	scanf("%f",&num2);
+	switch(op){
+	case '+':  result = num1+num2;
+	break;
+	case'-': result = num1-num2;
+	break;
+	case'*': result = num1*num2;
+	break;
+	case'/': result = num1/num2;
+	break;
+	}
+	return 0;
+}

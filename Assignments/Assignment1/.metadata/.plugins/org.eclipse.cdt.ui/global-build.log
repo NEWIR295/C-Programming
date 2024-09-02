@@ -1,0 +1,10 @@
+10:40:47 **** Incremental Build of configuration Debug for project Assignment1_21 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -o Assignment1_21.exe "src\\main.o" 
+Info: Nothing to build for Assignment1_21
+10:41:32 **** Incremental Build of configuration Debug for project Assignment1_21 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -o Assignment1_21.exe "src\\main.o" 
+Info: Nothing to build for Assignment1_21

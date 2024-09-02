@@ -1,0 +1,33 @@
+/*
+ * main.c
+ *
+ *  Created on: Jul 26, 2024
+ *      Author: Mohamed Newir
+ */
+/*std libraries*/
+#include <stdio.h>
+#include <stdlib.h>
+/*function prototype*/
+long fabonacci(long);
+
+int main(int argc, char **argv){
+	long num;
+	printf("enter number: ");
+	fflush(stdout);
+	scanf("%ld",&num);
+	printf("fabonacci series of %ld = %ld",num,fabonacci(num));
+	return 0;
+}
+/*
+a C Function that calculate the Fibonacci series using recursive method.
+The Fibonacci Series : 0,1,1,2,3,5,8,13,21,…
+ */
+
+long fabonacci(long num){
+	if(num == 1 || num == 0){
+		return num;
+	}
+	else{
+		return fabonacci(num -1) +fabonacci(num-2);
+	}
+}

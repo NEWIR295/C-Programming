@@ -1,0 +1,44 @@
+/*
+ * main.c
+ *
+ *  Created on: Aug 5, 2024
+ *      Author: Mohamed Newir
+ */
+/*std libraries*/
+#include <stdio.h>
+#include <stdlib.h>
+/*structure deceleration*/
+struct node{
+	int data;
+	struct node *next;
+};
+/*global variables*/
+struct node *head = NULL;
+/*function prototype*/
+void insertAtLast(int);
+void printList(void);
+void listMaxData(int*);
+/*main function*/
+int main(int argc, char **argv){
+	int max = 0;
+	insertAtLast(11);
+	insertAtLast(3);
+	insertAtLast(10);
+	insertAtLast(100);
+	insertAtLast(23);
+	insertAtLast(5);
+	insertAtLast(50);
+	printList();
+	listMaxData(&max);
+	if(max != -1){
+		printf("max data in list = %d\n",max);
+	}
+	return 0;
+}
+
+/*
+	a C function that returns the data inside the 5 th element
+	from the end of linked list and in case the linked list contains only
+	one node return the data inside this node.
+*/
+

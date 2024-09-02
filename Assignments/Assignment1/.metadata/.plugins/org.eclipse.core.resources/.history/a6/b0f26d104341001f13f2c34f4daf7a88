@@ -1,0 +1,31 @@
+/*
+ * main.c
+ *
+ *  Created on: Jul 13, 2024
+ *      Author: Mohamed Newir
+ *
+ */
+
+//std Libraries
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char **argv){
+
+	int num1=10;
+
+	int i ,j;
+	for(i =0;i<num1;i++){
+
+		for(j =0;j<num1;j++){
+			if(i==5){
+				break;
+			}
+
+				printf("number %d is odd\n",i);
+
+		}
+	}
+	return 0;
+}
+

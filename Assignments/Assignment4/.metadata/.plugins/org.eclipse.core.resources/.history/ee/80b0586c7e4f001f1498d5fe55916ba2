@@ -1,0 +1,19 @@
+/*
+ * main.c
+ *
+ *  Created on: Jul 31, 2024
+ *      Author: Mohamed Newir
+ */
+/*std libraries*/
+
+/*constant definitions*/
+#define SIZE 6
+/*main function*/
+int main(int argc, char **argv){
+	int array[SIZE] = {1,6,5,32,4,5};
+	return 0;
+}
+/*
+	C Program to print all the array elements and the
+	maximum number in array using array of pointers
+*/

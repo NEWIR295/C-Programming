@@ -1,0 +1,39 @@
+/*
+ * main.c
+ *
+ *  Created on: Jul 26, 2024
+ *      Author: Mohamed Newir
+ */
+/*std Libraries*/
+#include <stdio.h>
+#include <stdlib.h>
+/*function prototype*/
+void reverseString(char str[]);
+int main (int argc, char **argv){
+	char string[20];
+	printf("enter string: ");
+	fflush(stdout);
+	scanf("%s",string);
+	reverseString(string);
+	printf("string after reverse: %s",string);
+	return 0;
+}
+void reverseString(char str[]){
+	int i =  0;
+	int j;
+	int str2[40];
+	while(str[i] != '\0'){
+		str2[i] = str[i];
+		i++;
+	}
+	i -=1;
+	for(j=0;i>=0;i--,j++){
+		str[j]=str2[i];
+	}
+	j+=1;
+	str[j] = '\0';
+	/*
+	 * temp=str[i]
+	 * str[i] =str[length-i-1]
+	 * str[length-i-1] = temp*/
+}

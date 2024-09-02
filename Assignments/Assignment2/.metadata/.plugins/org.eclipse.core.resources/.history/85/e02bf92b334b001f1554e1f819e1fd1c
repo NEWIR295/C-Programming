@@ -1,0 +1,11 @@
+/*
+ * main.c
+ *
+ *  Created on: Jul 26, 2024
+ *      Author: Mohamed Newir
+ */
+
+/*
+a C function to count the number of 1’s in an unsigned 32-bit integer
+*/
+

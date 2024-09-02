@@ -1,0 +1,19 @@
+/*
+ * main.c
+ *
+ *  Created on: Jul 31, 2024
+ *      Author: Mohamed Newir
+ */
+/*std libraries*/
+#include <stdio.h>
+#include <stdlib.h>
+/*function prototype*/
+
+/*main function*/
+int main (int argc, char **argv){
+
+	return 0;
+}
+/*
+
+*/

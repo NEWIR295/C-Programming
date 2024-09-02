@@ -1,0 +1,242 @@
+/*
+ * main.c
+ *
+ *  Created on: Aug 6, 2024
+ *      Author: Mohamed Newir
+ *      Project Description:
+ *      	The Student Management System is a C program designed to manage student
+			information efficiently. It allows the user to perform various operations
+			such as adding new students, displaying all students, searching for a
+			student by ID, updating student details, calculating the average GPA,
+			and finding the student with the highest GPA.
+			This system utilizes fundamental programming concepts including conditions
+			,loops, strings, structs, and pointers, besides the ability to use data
+			structures efficiently like the linked list.
+ */
+/*STD Libraries*/
+#include <stdio.h>
+#include <stdlib.h>
+#include <windows.h> // For Sleep
+/*constant definitions*/
+#define maxCharSize 50
+#define one 1
+/*structure deceleration*/
+typedef struct {
+	int id;
+	char name[maxCharSize];
+	int age;
+	float gpa;
+}student;
+/*linked list node*/
+struct node{
+	student data;
+	struct node *next;
+};
+/*global variables*/
+struct node *head = NULL;
+/*function prototype*/
+void addStudent(const student *const);
+void displayStudents(void);
+void searchStudentByID(int);
+void updateStudent(int);
+float calculateAverageGPA(void);
+void searchHighestGPA(void);
+/*main function*/
+int main(void){
+	while(one){
+		char choice;
+		printf("\n\n\t\t##Student Portal Main Menu##\n\n");
+		printf("\tA) Add Student\n"
+				"\tB) Display All Students\n"
+				"\tC) Search For Student By ID\n"
+				"\tD) Update Information\n"
+				"\tE) Delete Student\n"
+				"\tF) Calculate Average GPA\n"
+				"\tG) Find Student With Highest GPA\n"
+				"\tK) Exit\n\n\n"
+				"Enter The Character Corresponding To The Option You Want: ");
+		fflush(stdout);
+		scanf("%s",&choice);
+		switch(choice){
+		case 'A':
+		case 'a':
+			student new;
+			printf("/n/tAdd New User Data\n");
+			printf("Enter User Name: ");
+			fflush(stdout);
+			scanf("%s",new.name);
+			printf("Enter User ID: ");
+			fflush(stdout);
+			scanf("%d",&new.id);
+			printf("Enter User Age: ")
+			fflush(stdout);
+			scanf("%d",&new.age);
+			printf("Enter User GPA: ");
+			fflush(stdout);
+			scanf("%f",&new.gpa);
+			addStudent(&new);
+			break;
+		case 'B':
+		case 'b':
+			displayStudents();
+			break;
+		case 'c':
+		case 'C':
+			int id;
+			printf("Enter Student ID to Search: ");
+			fflush(stdout);
+			scanf("%d",&id);
+			searchStudentByID(id);
+			break;
+		case 'D':
+		case 'd':
+			int id;
+			printf("Enter Student ID To Update: ");
+			fflush(stdout);
+			scanf("%d",&id);
+			updateStudent(id);
+			break;
+		case 'E':
+		case 'e':
+			    float AverageGpa = calculateAverageGPA();
+			    printf("Student Average GPA = %f\n",AverageGpa);
+			break;
+		case 'f':
+		case 'F':
+
+			break;
+		case 'g':
+		case 'G':
+
+			break;
+		case 'k':
+		case 'K':
+
+			break;
+		default:
+			printf("You Entered Wrong Character\n");
+		}
+		printf("\n\t\tThank You For Using Student Portal");
+		Sleep(5000);
+	}
+	return 0;
+}
+/*Functions Definitions */
+void addStudent(const student *const ptr){
+	struct node *current = head;
+	while(current != NULL){
+		if(current->data->id == ptr->id){
+			printf("ERROR: ID Existed\n");
+			return;
+		}
+		current = current->next;
+	}
+	struct node *link = (struct node*)malloc(sizeof(struct node));
+	assert(link != NULL);
+	link->data->age = ptr->age;
+	link->data->gpa = ptr->gpa;
+	link->data->id = ptr->id;
+	link->data->name = ptr->name;
+	link->next = NULL;
+	if(head == NULL){
+		head = link;
+		printf("New Student Added Successfully\n");
+		return;
+	}
+	current = head;
+	while(current->next != NULL){
+		current = current->next;
+	}
+	current->next = link;
+	printf("New Student Added Successfully\n");
+}
+void displayStudents(void){
+	if(head == NULL){
+		printf("Student List Is Empty\n");
+		return;
+	}
+	int count = one;
+	struct node *current = head;
+	while(current != NULL){
+		printf("%student d:\n"
+				"\tStudent name: %s\n"
+				"\tStudent ID: %d\n"
+				"\tStudent age: %d\n"
+				"\tStudent GPA: %f\n",count,current->data->name,
+				current->data->id,current->data->age,
+				current->data->gpa);
+		count++;
+		current = current->next;
+	}
+}
+void searchStudentByID(int id){
+	if(head == NULL){
+		printf("Student List Is Empty\n");
+		return;
+	}
+	int count = 1;
+	struct node *current = head;
+	while(current != NULL){
+		if(current->data->id == id){
+			printf("Student %d Found:\n"
+					"\t\tStudent %d details:\n"
+					"\t\tStudent name: %s\n"
+					"\t\tStudent ID: %d\n"
+					"\t\tStudent age: %d\n"
+					"\t\tStudent GPA: %f\n",count,count,current->data->name,
+					current->data->id,current->data->age,
+					current->data->gpa);
+			return;
+		}
+		count++;
+		current = current->next;
+	}
+	printf("Student Is Not Found\n");
+}
+void updateStudent(int id){
+	if(head == NULL){
+		printf("Student List Is Empty\n");
+		return;
+	}
+	struct node *current  = head;
+	while(current != NULL){
+		if(current->data->id == id){
+			printf("\tEnter Student Data To Be Updated:\n");
+			printf("\t\tEnter The Updated Student Name: ");
+			fflush(stdout);
+			scanf("%s",current->data->name);
+			printf("\t\tEnter The Updated Student Age: ");
+			fflush(stdout);
+			scanf("%s",current->data->age);
+			printf("\t\tEnter The Updated Student GPA: ");
+			fflush(stdout);
+			scanf("%s",current->data->gpa);
+			return;
+		}
+		current = current->next;
+	}
+	printf("Student Is Not Found\n");
+}
+float calculateAverageGPA(void){
+	if(head == NULL){
+		printf("Student List Is Empty\n");
+		return 0.0;
+	}
+	float AverageGpa;
+	int count = 0;
+	float sum = 0.0;
+	struct node *current = NULL;
+	while(current != NULL){
+		sum += current->data->gpa;
+		count++;
+		current = current->next;
+	}
+	AverageGpa = sum/count;
+	return AverageGpa;
+}
+void searchHighestGPA(void){
+
+}
+void deleteStudent(int id){
+
+}

@@ -1,0 +1,28 @@
+/*
+ * main.c
+ *
+ *  Created on: Jul 26, 2024
+ *      Author: Mohamed Newir
+ */
+
+/*
+a C function that return 0 if a given number is a power of 3, otherwise return 1 (except 3 to the power of 0).
+*/
+int checkPowerOf3 (int num){
+	if(num == 0 || num == 1){
+		return 1;
+	}
+	else{
+		while(1){
+			if(num%3==0){
+				if(num == 3){
+					return 0;
+				}
+				num /=3;
+			}
+			else{
+				return 1;
+			}
+		}
+	}
+}

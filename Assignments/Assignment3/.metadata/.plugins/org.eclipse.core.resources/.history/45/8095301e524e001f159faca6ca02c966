@@ -1,0 +1,22 @@
+/*
+ * main.c
+ *
+ *  Created on: Jul 29, 2024
+ *      Author: Mohamed Newir
+ */
+/*std libraries*/
+#include <stdio.h>
+#include <stdlib.h>
+/*function prototype*/
+void concatenateString(char*,char*,char*);
+/*main function*/
+int main(int argc, char **argv){
+
+	return 0;
+}
+/*
+a function to concatenate two strings without using strcat function.
+*/
+void concatenateString(char *str1, char *str2,char *str){
+
+}

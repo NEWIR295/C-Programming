@@ -1,0 +1,27 @@
+/*
+ * main.c
+ *
+ *  Created on: Aug 1, 2024
+ *      Author: ma479
+ */
+/*std libraries*/
+#include <stdio.h>
+#include <stdlib.h>
+/*function prototype*/
+int oddRepititionsArray(int *,int);
+/*main function*/
+int main(int argc,char **argv){
+
+	return 0;
+}
+/*
+	Array that contains integer values, some of these
+	values are repeated with an even number of repetitions,
+	and only one value is repeated with an odd number of
+	repetitions. Write a C function that’s take the array as
+	input and the array size and return the number which has
+	odd numbers of repetitions.
+*/
+int oddRepititionsArray(int *arr,int size){
+
+}

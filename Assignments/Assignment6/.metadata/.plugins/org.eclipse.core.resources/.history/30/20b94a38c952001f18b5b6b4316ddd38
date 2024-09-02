@@ -1,0 +1,12 @@
+/*
+ * main.c
+ *
+ *  Created on: Aug 5, 2024
+ *      Author: Mohamed Newir
+ */
+struct node{
+	int data;
+	struct node *next;
+};
+struct node *head =NULL;
+

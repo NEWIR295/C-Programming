@@ -1,0 +1,19 @@
+/*
+ * main.c
+ *
+ *  Created on: Jul 26, 2024
+ *      Author: Mohamed Newir
+ */
+/*
+a C Function that calculate the Fibonacci series using recursive method.
+The Fibonacci Series : 0,1,1,2,3,5,8,13,21,…
+ */
+
+long fabonacci(long num){
+	if(num == 1 || num == 0){
+		return num;
+	}
+	else{
+		return fabonacci(num -1) +fabonacci(num-2);
+	}
+}

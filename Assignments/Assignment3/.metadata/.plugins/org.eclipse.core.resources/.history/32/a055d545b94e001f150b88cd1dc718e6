@@ -1,0 +1,15 @@
+/*
+ * main.c
+ *
+ *  Created on: Jul 30, 2024
+ *      Author: Mohamed Newir
+ */
+
+/*
+a C function to find the frequency of characters in a string.
+• Input the string from the user.
+• Traverse the string, character by character and store the
+count of each of the characters in an array.
+• Print the array that contains the frequency of all the characters.
+*/
+

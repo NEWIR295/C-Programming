@@ -1,0 +1,163 @@
+/*
+ * main.c
+ *
+ *  Created on: Aug 3, 2024
+ *      Author: ma479
+ */
+/*std libraries*/
+#include <stdio.h>
+#include <stdlib.h>
+/*structure deceleration*/
+struct node{
+	int data;
+	struct node *next;
+};
+/*global variables*/
+struct node *head = NULL;
+/*function prototype*/
+void insertAtLast(int);
+void insertAtfirst(int);
+int findSize(void);
+int findData(int);
+void printList(void);
+void updateList(int,int);
+void deleteList(int);
+/*MAIN FUNCTION*/
+int main(int argc,char **argv){
+	int size,i,data,pos;
+	printf("enter data size: ");
+	fflush(stdout);
+	scanf("%d",&size);
+	for(i = 0;i<size;i++){
+		printf("enter data to save: ");
+		fflush(stdout);
+		scanf("%d",&data);
+		insertAtfirst(data);
+	}
+	printf("enter data to find: ");
+	fflush(stdout);
+	scanf("%d",&data);
+	pos = findData(data);
+	if(pos == -1){
+		printf("data not found in the list\n");
+	}
+	else{
+		printf("data is at postion = %d",pos);
+	}
+	printList();
+	return 0;
+}
+/*linked list functions*/
+void insertAtfirst(int data){
+	struct node *link =(struct node*)malloc(sizeof(struct node));
+	link->data = data;
+	link->next = head;
+	head = link;
+}
+int findData(int data){
+	int pos =0;
+	struct node *current;
+	current = head;
+	if(head == NULL){
+		printf("linked list is empty\n");
+		return -1;
+	}
+	while(current != NULL){
+		if(current ->data == data){
+			return pos;
+		}
+		current = current->next;
+		pos++;
+	}
+	return -1;
+}
+void printList(void){
+	struct node *current = head;
+	if(head == NULL){
+		printf("list is empty");
+		return;
+	}
+	while(current != NULL){
+		printf("%d =>\t",current->data);
+		current =  current->next;
+	}
+}
+void insertAtLast(int data){
+	struct node *link = (struct node*)malloc(sizeof(struct node));
+	struct node *current = head;
+	link->data = data;
+	link->next = NULL;
+	if(head == NULL){
+		head = link;
+		return;
+	}
+	while(current->next != NULL){
+		current = current->next;
+	}
+	current->next = link;
+}
+int findSize(void){
+	int pos = 0;
+	struct node *current = NULL;
+	if(head == NULL){
+		printf("list is empty\n");
+		return pos;
+	}
+	while(current->next != NULL ){
+		current = current->next;
+		pos++;
+	}
+	return pos;
+}
+void updateList(int data, int new){
+	struct node *current = NULL;
+	int pos = 0;
+	if(head == NULL){
+		return;
+	}
+	current = head;
+	while(current!=NULL){
+		if(current->data == data){
+			current->data = new;
+			return;
+		}
+		current = current->next;
+	}
+	return;
+}
+void deleteList(int data){
+	int pos = 0;
+	struct node* delete = NULL;
+	struct node* current = NULL;
+	struct node* prev =NULL;
+	if(head == NULL){
+		printf("list is empty\n");
+		return;
+	}
+	if(head->data == data){
+		delete = head;
+		head = head->next;
+		printf("%d @ pos %d is deleted\n",data,pos);
+		free(delete);
+		return;
+	}
+	pos++;
+	current = head->next;
+	prev = head;
+	while(current !=NULL){
+		if(current->data == data){
+			delete = current;
+			prev->next= current->next;
+			printf("%d @ pos %d is deleted\n",data,pos);
+			free(delete);
+			return;
+		}
+		prev = current;
+		current = current->next;
+		pos++;
+	}
+	if(delete == NULL){
+		printf("%d not found in the list.\n",data);
+		return;
+	}
+}

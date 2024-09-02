@@ -1,0 +1,21 @@
+/*
+ * main.c
+ *
+ *  Created on: Aug 1, 2024
+ *      Author: Mohamed Newir
+ */
+/*std libraries*/
+#include <stdio.h>
+#include <stdlib.h>
+/**/
+
+/*main function*/
+int main (int argc,char **argv){
+
+	return 0;
+}
+/*
+	Given a string, create a new string made up of its last
+	two letters, reversed and separated by a space, the word
+	is “bat”. Return string contains ”t a”
+*/

@@ -1,0 +1,18 @@
+/*
+ * main.c
+ *
+ *  Created on: Jul 11, 2024
+ *      Author: Mohamed Newir
+ *       a program that print my name and your grade in a new line.
+ */
+
+//std libraries
+#include <stdio.h>
+#include <stdlib.h>
+
+int main (int argc, char ** argv){
+
+	printf("I am Mohammed Newir\n");
+	printf("I am in the fourth grade\n")
+	return 0;
+}

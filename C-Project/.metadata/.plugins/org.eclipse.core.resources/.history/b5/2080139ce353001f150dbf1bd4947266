@@ -1,0 +1,158 @@
+/*
+ * main.c
+ *
+ *  Created on: Aug 6, 2024
+ *      Author: Mohamed Newir
+ *      Project Description:
+ *      	The Student Management System is a C program designed to manage student
+			information efficiently. It allows the user to perform various operations
+			such as adding new students, displaying all students, searching for a
+			student by ID, updating student details, calculating the average GPA,
+			and finding the student with the highest GPA.
+			This system utilizes fundamental programming concepts including conditions
+			,loops, strings, structs, and pointers, besides the ability to use data
+			structures efficiently like the linked list.
+ */
+/*STD Libraries*/
+#include <stdio.h>
+#include <stdlib.h>
+#include <windows.h> // For Sleep
+/*constant definitions*/
+#define maxCharSize 50
+#define one 1
+/*structure deceleration*/
+typedef struct {
+	int id;
+	char name[maxCharSize];
+	int age;
+	float gpa;
+}student;
+/*linked list node*/
+struct node{
+	student data;
+	struct node *next;
+};
+/*global variables*/
+struct node *head = NULL;
+/*function prototype*/
+void addStudent(const student *const);
+/*main function*/
+int main(void){
+	while(one){
+		char choice;
+		printf("\n\n\t\t##Student Portal Main Menu##\n\n");
+		printf("\tA) Add Student\n"
+				"\tB) Display All Students\n"
+				"\tC) Search For Student By ID\n"
+				"\tD) Update Information\n"
+				"\tE) Delete Student\n"
+				"\tF) Calculate Average GPA\n"
+				"\tG) Find Student With Highest GPA\n"
+				"\tK) Exit\n\n\n"
+				"Enter The Character Corresponding To The Option You Want: ");
+		fflush(stdout);
+		scanf("%s",&choice);
+		switch(choice){
+		case 'A':
+		case 'a':
+			student new;
+			printf("/n/tAdd New User Data\n");
+			printf("Enter User Name: ");
+			fflush(stdout);
+			scanf("%s",new.name);
+			printf("Enter User ID: ");
+			fflush(stdout);
+			scanf("%d",&new.id);
+			printf("Enter User Age: ")
+			fflush(stdout);
+			scanf("%d",&new.age);
+			printf("Enter User GPA: ");
+			fflush(stdout);
+			scanf("%f",&new.gpa);
+			addStudent(&new);
+			break;
+		case 'B':
+		case 'b':
+
+			break;
+		case 'c':
+		case 'C':
+
+			break;
+		case 'D':
+		case 'd':
+
+			break;
+		case 'E':
+		case 'e':
+
+			break;
+		case 'f':
+		case 'F':
+
+			break;
+		case 'g':
+		case 'G':
+
+			break;
+		case 'k':
+		case 'K':
+
+			break;
+		default:
+			printf("You Entered Wrong Character\n");
+		}
+		printf("\n\t\tThank You For Using Student Portal");
+		Sleep(5000);
+	}
+	return 0;
+}
+/*Functions Definitions */
+void addStudent(const student *const ptr){
+	struct node *current = head;
+	while(current != NULL){
+		if(current->data->id == ptr->id){
+			printf("ERROR: ID Existed\n");
+			return;
+		}
+		current = current->next;
+	}
+	struct node *link = (struct node*)malloc(sizeof(struct node));
+	link->data->age = ptr->age;
+	link->data->gpa = ptr->gpa;
+	link->data->id = ptr->id;
+	link->data->name = ptr->name;
+	link->next = NULL;
+	if(head == NULL){
+		head = link;
+		printf("New Student Added Successfully\n");
+		return;
+	}
+	current = head;
+	while(current->next != NULL){
+		current = current->next;
+	}
+	current->next = link;
+	printf("New Student Added Successfully\n");
+}
+void displayStudents(void){
+	if(head == NULL){
+		printf("Student List Is Empty\n");
+	}
+
+}
+void searchStudentByID(int id){
+
+}
+void updateStudent(int id){
+
+}
+float calculateAverageGPA(void){
+
+}
+void searchHighestGPA(void){
+
+}
+void deleteStudent(int id){
+
+}

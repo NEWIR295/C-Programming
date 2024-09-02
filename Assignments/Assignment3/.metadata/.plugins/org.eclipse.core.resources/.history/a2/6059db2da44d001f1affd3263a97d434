@@ -1,0 +1,42 @@
+/*
+ * main.c
+ *
+ *  Created on: Jul 29, 2024
+ *      Author: Mohamed Newir
+ */
+/*std libraries*/
+#include <stdio.h>
+#include <stdlib.h>
+/*constant definitions*/
+#define SIZE 4
+/*Function Prototype*/
+int arraySummation(int*,int);
+/*MAIN FUNCTION*/
+int main(int argc, char **argv){
+	int array[SIZE] = {0};
+	int i;
+	printf("enter numbers for summation:");
+	for(i = 0;i<SIZE;i++){
+		fflush(stdout);
+		scanf("%d",(array + i));
+	}
+	int sum = arraySummation(array,SIZE);
+	printf("\n summation of the elements in the array = %d",sum);
+	return 0;
+}
+/*
+ The sum of an array is the sum of its individual elements. For
+example, if an array is numbers = {1, 2, 3, 4}, the sum of the array
+is 1+2+3+4 = 10.
+Function Description: Complete the function summation. The
+function must return the integer sum of the numbers array.
+ int summation(int numbers_size, int* numbers)
+*/
+int arraySummation(int *arr,int size){
+	int sum =0;
+	int i;
+	for(i=0;i<size;i++){
+		sum += *(arr + i);
+	}
+	return sum;
+}

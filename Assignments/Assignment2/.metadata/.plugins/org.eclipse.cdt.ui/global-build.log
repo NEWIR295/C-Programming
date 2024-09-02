@@ -1,0 +1,9 @@
+09:00:35 **** Incremental Build of configuration Debug for project Q10-26JUL ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -o Q10-26JUL.exe "src\\main.o" 
+Info: Nothing to build for Q10-26JUL
+Info: Nothing to build for Q10-26JUL
+Info: Nothing to build for Q10-26JUL
+Info: Nothing to build for Q10-26JUL
+Info: Nothing to build for Q10-26JUL

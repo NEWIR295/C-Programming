@@ -1,0 +1,25 @@
+/*
+ * main.c
+ *
+ *  Created on: Jul 11, 2024
+ *      Author: Mohamed Newir
+ *      a program to reverse a number.
+ */
+/*std libraries*/
+#include <stdio.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv){
+	int num,reverse = 0, reminder;
+	printf("enteer number to reverse: ");
+	fflush(stdout);
+	scanf("%d",&num);
+	while(num != 0){
+
+		reminder = num%10;
+		reverse = reverse*10+ reminder;
+		num /=10;
+	}
+	printf("the reverse = %d",reverse);
+	return 0;
+}

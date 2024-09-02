@@ -1,0 +1,36 @@
+/*
+ * main.c
+ *
+ *  Created on: Jul 29, 2024
+ *      Author: Mohamed Newir
+ */
+/*STD libraries*/
+#include <stdio.h>
+#include <stdlib.h>
+/*function prototype*/
+void removeChar(char*);
+/*main function*/
+int main(int argc,char **argv){
+	char str[20];
+	printf("enter string: ");
+	fflush(stdout);
+	scanf("%s",str);
+	removeChar(str);
+	printf("string removing all characters in a string expect alphabet: %s",str);
+	return 0;
+}
+/*
+a function to remove all characters in a string expect alphabet.
+ */
+void removeChar(char *str){
+	int i,j;
+	for(i = 0;str[i] != '\0';){
+		if( (str[i] >='a' && str[i] <= 'z') || (str[i] >='A' && str[i] <= 'Z' ) ){
+			i++;
+		}
+		else{
+			for(j=i;str[j] != '\0';++j)
+				str[j] = str[j+1];
+		}
+	}
+}

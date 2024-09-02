@@ -1,0 +1,32 @@
+/*
+ * main.c
+ *
+ *  Created on: Jul 30, 2024
+ *      Author: Mohamed Newir
+ */
+
+/*
+a C function to find the second largest number in an array and return its value.
+ */
+int searchFor2ndLargest(int *arr,int size){
+	int sndMax = 0;
+	int maxIndex = 0;
+	int arrMax =  0;
+	int arr2max = 0
+	int i;
+	for(i = 0; i<size;i++){
+		if(arrMax < arr[i]){
+			arrMax = arr[i];
+			maxIndex = i;
+		}
+
+	}
+	for(i = 0; i<size;i++){
+		if(i == maxIndex){
+			continue;
+		}
+		if(arr2max < arr[i]){
+			arr2max = arr[i];		}
+	}
+	return sndMax;
+}

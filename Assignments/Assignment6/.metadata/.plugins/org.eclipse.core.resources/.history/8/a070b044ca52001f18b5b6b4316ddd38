@@ -1,0 +1,30 @@
+/*
+ * main.c
+ *
+ *  Created on: Aug 5, 2024
+ *      Author: Mohamed Newir
+ */
+/*STD LIBRARIES*/
+#include <stdio.h>
+#include <stdlib.h>
+/*structure deceleration*/
+struct node{
+	int data;
+	struct node *next;
+};
+/*global variables*/
+struct node *head =NULL;
+/*function prototypes*/
+void insertAtFirst(int);
+void insertAtLast(int);
+void printList(void);
+void updateList(int,int);
+void deleteList(int);
+int findListSize(void);
+int findDataPos(int);
+/*main function*/
+int main(int argc,char**argv){
+
+	return 0;
+}
+/*functions definition*/

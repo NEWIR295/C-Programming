@@ -1,0 +1,35 @@
+/*
+ * main.c
+ *
+ *  Created on: Jul 31, 2024
+ *      Author: Mohamed Newir
+ */
+/*std libraries*/
+#include <stdio.h>
+#include <stdlib.h>
+/*constant definitions*/
+#define SIZE 5
+/*function prototype*/
+void arrayCopy(int*,int*,int);
+/*main function*/
+int main(int argc,char **argv){
+	int i;
+	int arr[SIZE] = {1,5,6,7,0};
+	int arrC[SIZE] = {0};
+	arrayCopy(arr,arrC,SIZE);
+	printf("array c:\n");
+	for(i = 0;i<SIZE;i++){
+		printf("%d\t",*(arrC + i));
+	}
+	return 0;
+}
+/*
+ C function to copy all elements of an array into another
+ array using pointers. The two arrays have the same length and types.
+*/
+void arrayCopy(int *ptr1,int *ptr2,int size){
+	int i;
+	for(i = 0; i<size;i++){
+		*(ptr2 +i) = *(ptr1 + i);
+	}
+}

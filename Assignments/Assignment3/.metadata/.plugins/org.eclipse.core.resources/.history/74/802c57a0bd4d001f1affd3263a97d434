@@ -1,0 +1,22 @@
+/*
+ * main.c
+ *
+ *  Created on: Jul 29, 2024
+ *      Author: Mohamed Newir
+ */
+/*std libraries*/
+#include <stdio.h>
+#include <stdlib.h>
+/*function prototype*/
+
+/*main function*/
+int main(int argc, char **argv){
+
+
+	return 0;
+}
+/*
+a program that computes the nth term of the arithmetic
+series: 1, 3, 5, 7, 9, …
+Run the program to compute the 100th term of the given series.
+*/
