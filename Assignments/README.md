@@ -1,2 +1,2 @@
 # C-Programming
-C programming Repo. document my Journey in C world :) 
+C programming Course Assignments in Standard Embedded System Diploma By Eng Tarek
