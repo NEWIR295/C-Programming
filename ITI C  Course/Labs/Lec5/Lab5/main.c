@@ -45,12 +45,12 @@ void main (void){
 void sort(int arr[], int size){
   // Sorting the input Array
   int i, j, temp;
-  for(i = 0; i < size; i++){
-    for(j = i + 1; j < size; j++){
-      if(arr[i] > arr[j]){
-        temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
+  for(i = 0; i < size-1; i++){
+    for(j = 0 ; j < size-1-i; j++){
+      if(arr[j] > arr[j + 1]){
+        temp = arr[j];
+        arr[j] = arr[j+1];
+        arr[j+1] = temp;
       }
     }
   }

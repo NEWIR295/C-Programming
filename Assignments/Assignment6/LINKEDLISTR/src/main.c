@@ -45,7 +45,7 @@ void insertAtLast(int data){
 		return;
 	}
 	current = head;
-	while(current->next == NULL){
+	while(current->next != NULL){
 		current = current->next;
 	}
 	current->next = link;
