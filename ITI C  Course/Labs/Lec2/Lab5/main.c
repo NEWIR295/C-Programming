@@ -1,6 +1,7 @@
 /*
 Code Description:
-                  Implementation of Login System where you will write a C code that ask the user to enter his ID and then the program will print his name.
+                  Implementation of Login System where you will write a C code that 
+				  ask the user to enter his ID and then the program will print his name.
                   Available IDs are:
                                     1234-> Ahmed
                                     5678 -> Youssef

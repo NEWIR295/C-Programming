@@ -1,6 +1,7 @@
 /*
 Code Description:
-                Write a C code to ask the user to enter his grade and the program will print his rating.
+                Write a C code to ask the user to enter his grade and the program
+				will print his rating.
                 
                 0 <= grade < 50 ------> 
                 50 <= grade < 65 ------> Normal

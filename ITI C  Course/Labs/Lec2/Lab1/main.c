@@ -1,5 +1,5 @@
 /*
-  Standard Libraries
+  Write a C code to print the false value and the true value on GCC.
 */
 
 #include <stdio.h> // input/output std library

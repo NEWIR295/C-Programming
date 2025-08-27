@@ -1,6 +1,7 @@
 /*
 Code Description:
-                  Write a C code that ask the user to enter a number and check if it is Even or Odd number
+                  Write a C code that ask the user to enter a number 
+				  and check if it is Even or Odd number
 */
 
 #include <stdio.h> // input/output std library
